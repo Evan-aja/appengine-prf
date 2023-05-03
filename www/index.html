@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            href="https://storage.googleapis.com/dicoding-web-bucket/resource/madeWithArchLinux.png"
+            type="image/x-icon"
+        />
+        <style type="text/css">
+            @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+            * {
+                font-family: "Nunito", sans-serif;
+                font-style: normal;
+            }
+
+            .banner {
+                position: absolute;
+                width: 100%;
+                height: 220px;
+                left: 0px;
+                top: 0px;
+                background-size: cover;
+                background-position-y: 70%;
+                background-image: url(https://storage.googleapis.com/dicoding-web-bucket/resource/banner.jpg);
+            }
+
+            .profile {
+                position: absolute;
+                z-index: 1;
+                width: 200px;
+                height: 200px;
+                left: 70px;
+                top: 130px;
+
+                background-size: cover;
+                background-image: url(https://storage.googleapis.com/dicoding-web-bucket/resource/FotoProfil.png);
+                border-radius: 50%;
+            }
+
+            .cont1 {
+                position: absolute;
+                width: 40vw;
+                min-width: 240px;
+                left: 50px;
+                top: 315px;
+            }
+
+            .name {
+                position: relative;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 25px;
+                color: #000000;
+            }
+
+            .ambit {
+                position: relative;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                top: -15px;
+                color: rgba(0, 0, 0, 0.8);
+            }
+
+            .cont1_1 {
+                position: relative;
+            }
+
+            .location-image {
+                position: absolute;
+                width: 18px;
+                top: -15px;
+            }
+
+            .location-text {
+                position: absolute;
+                left: 30px;
+                top: -33px;
+
+                font-style: normal;
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 29px;
+                color: rgba(0, 0, 0, 0.8);
+            }
+
+            .gender-image {
+                position: absolute;
+                width: 18px;
+                top: 20px;
+            }
+
+            .gender-text {
+                position: absolute;
+                left: 30px;
+                top: 2px;
+
+                font-style: normal;
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 29px;
+                color: rgba(0, 0, 0, 0.8);
+            }
+
+            .education-image {
+                position: absolute;
+                width: 18px;
+                top: 55px;
+            }
+
+            .education-text {
+                position: absolute;
+                left: 30px;
+                top: 36px;
+
+                font-style: normal;
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 29px;
+                color: rgba(0, 0, 0, 0.8);
+            }
+
+            .date-ob-image {
+                position: absolute;
+                width: 18px;
+                top: 90px;
+            }
+
+            .date-ob-text {
+                position: absolute;
+                left: 30px;
+                top: 70px;
+
+                font-style: normal;
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 29px;
+                color: rgba(0, 0, 0, 0.8);
+            }
+
+            .cont2 {
+                position: relative;
+                width: 70vw;
+                left: 340px;
+                top: 200px;
+            }
+
+            .aboutme {
+                position: relative;
+                left: 45px;
+                top: 15px;
+
+                font-style: normal;
+                font-weight: 600;
+                font-size: 48px;
+                line-height: 72px;
+                color: #000000;
+            }
+
+            .collapsible {
+                padding-left: 15px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                background-color: rgb(31, 82, 133);
+                color: white;
+                cursor: pointer;
+                width: 100%;
+                border: none;
+                border-radius: 8.51161px;
+                text-align: left;
+                outline: none;
+                font-size: 20px;
+            }
+
+            .active,
+            .collapsible:hover {
+                background-color: rgb(23, 101, 150);
+                border: none;
+                outline: none;
+            }
+
+            .collapsible:not(:hover) {
+                outline: none;
+            }
+
+            .collapsible:after {
+                content: "";
+                width: 32px;
+                height: 32px;
+                margin-right: 5px;
+                background: url("https://storage.googleapis.com/dicoding-web-bucket/resource/ArrowCircleLeft.png")
+                    no-repeat 0 0;
+                background-size: 100%;
+                float: right;
+                margin-left: 5px;
+                border: none;
+                outline: none;
+            }
+
+            .active:after {
+                content: "";
+                width: 32px;
+                height: 32px;
+                margin-right: 5px;
+                background: url("https://storage.googleapis.com/dicoding-web-bucket/resource/ArrowCircleDown.png")
+                    no-repeat 0 0;
+                background-size: 100%;
+                border: none;
+                outline: none;
+            }
+            .toggle:checked + .lbl-toggle {
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+
+            .content {
+                padding: 0 20px;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+                background-color: rgb(46, 130, 174);
+                border-radius: 7px;
+                border: none;
+                outline: none;
+                margin-bottom: 10px;
+                color: white;
+            }
+
+            .cont1_2 {
+                position: relative;
+                width: 100%;
+                margin: 0 auto;
+                display: inline;
+                top: 130px;
+            }
+
+            .buttons {
+                display: inline-block;
+                width: calc(15%-4px);
+                margin: 0 auto;
+                border: none;
+                background-color: transparent;
+            }
+
+            ::-webkit-scrollbar {
+                width: 10px;
+                height: 8px;
+                color: white;
+            }
+
+            ::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 100px white;
+                background: #666;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: silver;
+                border-radius: 50px;
+                height: 20px;
+            }
+        </style>
+        <title>Profil Gabrielle Evan Farrel</title>
+    </head>
+    <body>
+        <div class="banner">
+            <p style="color: blanchedalmond">
+                Halaman ini dibuat pada resolusi 1366x768, sehingga scaling dan
+                posisi elemen mungkin tidak sesuai pada resolusi selain ini
+            </p>
+        </div>
+        <div class="profile"></div>
+        <div class="cont1">
+            <p class="name">Gabrielle Evan Farrel</p>
+            <p class="ambit">Aspiring DevOps</p>
+            <div class="cont1_1">
+                <img
+                    src="https://storage.googleapis.com/dicoding-web-bucket/resource/location.png"
+                    class="location-image"
+                />
+                <p class="location-text">Araya Blok O2-07, Malang</p>
+                <img
+                    src="https://storage.googleapis.com/dicoding-web-bucket/resource/gender.png"
+                    class="gender-image"
+                />
+                <p class="gender-text">Male</p>
+                <img
+                    src="https://storage.googleapis.com/dicoding-web-bucket/resource/education.png"
+                    class="education-image"
+                />
+                <p class="education-text">Brawijaya in Computer Science</p>
+                <img
+                    src="https://storage.googleapis.com/dicoding-web-bucket/resource/dob.png"
+                    class="date-ob-image"
+                />
+                <p class="date-ob-text">11th of December</p>
+            </div>
+            <div class="cont1_2">
+                <button class="buttons">
+                    <a
+                        href="https://github.com/evan-aja"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><img
+                            src="https://storage.googleapis.com/dicoding-web-bucket/resource/Github.png"
+                            alt=""
+                            style="width: 25px"
+                    /></a>
+                </button>
+                <button class="buttons">
+                    <a
+                        href="https://evan-aja.vercel.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><img
+                            src="https://storage.googleapis.com/dicoding-web-bucket/resource/website.png"
+                            alt=""
+                            style="width: 25px"
+                    /></a>
+                </button>
+                <button class="buttons">
+                    <a
+                        href="https://www.linkedin.com/in/gabrielle-farrel"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><img
+                            src="https://storage.googleapis.com/dicoding-web-bucket/resource/linkedin.png"
+                            alt=""
+                            style="width: 25px"
+                    /></a>
+                </button>
+                <button class="buttons">
+                    <a
+                        href="https://medium.com/@gebel909"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><img
+                            src="https://storage.googleapis.com/dicoding-web-bucket/resource/Medium.png"
+                            alt=""
+                            style="width: 25px"
+                    /></a>
+                </button>
+            </div>
+        </div>
+        <div class="cont2">
+            <h1 class="aboutme">About Me</h1>
+            <button class="collapsible">Siapa Saya?</button>
+            <div class="content">
+                <p>
+                    Saya adalah Mahasiswa dari Universitas Brawijaya di Fakultas
+                    Ilmu Komputer dengan Program Studi Brawijaya. Saya adalah
+                    Linux enthusiast (Arch Linux) dan pendukung software open
+                    source. Saya lebih menyukai Command Line untuk basic task
+                    karena dapat dilakukan scripting untuk mengurangi konsumsi
+                    waktu
+                </p>
+            </div>
+            <button class="collapsible">Capaian saat ini?</button>
+            <div class="content">
+                <p>
+                    Beberapa capaian yang telah Saya dapatkan, termasuk :
+                    <br /><br /><strong
+                        >Menjadi Asisten Praktikum Pemrograman Dasar<br /></strong
+                    >Saya bangga dengan capaian ini karena Saya menjadi tahu
+                    bagaimana rasanya mengajar kelas di dalam dunia perkuliahan,
+                    serta memberikan pengalaman dan relasi baru terhadap asisten
+                    praktikum lain serta dosen<br /><br /><strong
+                        >Menyelesaikan 8 Quest mengenai Cloud Computing dalam
+                        event JuaraGCP yang diselenggarakan Google</strong
+                    ><br />Saya bangga dengan capaian ini, karena didalam event
+                    JuaraGCP ini, Saya menjadi lebih tahu bagaimana cara Google
+                    Cloud bekerja, serta Saya mendapatkan pengetahuan lebih
+                    mengenai cara kerja dari kontainerisasi, virtual machine
+                    instances, keamanan internet, hak kepemilikan dan akses, dan
+                    orkestrasi kontainer menggunakan Kubernetes (K8S).
+                </p>
+            </div>
+            <button class="collapsible">Target dan Impian?</button>
+            <div class="content">
+                <p>
+                    Saya memiliki Target dan Impian tertentu dan cara untuk
+                    mencapainya. diantaranya : <br /><br /><strong
+                        >Menjadi DevOps engineer handal</strong
+                    ><br />Saya ingin menjadi seseorang yang mampu menjadi
+                    DevOps yang dapat diandalkan didalam proyek pengembangan
+                    software. untuk mencapai impian tersebut, Saya selalu
+                    belajar secara mandiri mengenai tools yang digunakan, serta
+                    melakukan pengetesan pribadi seperti meluncurkan web app
+                    milik Saya sendiri menggunakan bantuan next.js
+                    <a
+                        href="https://evan-aja.vercel.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >disini</a
+                    >.<br /><br /><strong>Lulus Tepat Waktu</strong><br />Saya
+                    ingin lulus kuliah S1 tepat waktu, sehingga tidak perlu
+                    memperpanjang waktu kuliah yang memakan lebih banyak waktu
+                    dan uang untuk UKT dan kebutuhan lain. demi mencapai tujuan
+                    ini, Saya selalu mengikuti tiap mata kuliah dengan baik,
+                    serta mengikuti kegiatan keorganisasian dan kepanitiaan
+                    untuk menambah pengalaman dan pengetahuan tambahan untuk
+                    memperlancar penulisan skripsi
+                </p>
+            </div>
+            <button class="collapsible">OS yang digunakan?</button>
+            <div class="content">
+                <p>
+                    Sistem Operasi yang Saya gunakan saat ini adalah
+                    <strong>Arch Linux</strong>, karena memiliki prinsip KISS
+                    (Keep It Simple Stupid) dimana Arch Linux didesain untuk
+                    menjadi Sistem Operasi yang simpel, dan mudah digunakan.
+                    Serta, karena sederhana, penggunaan resource sistem sangat
+                    rendah. Sistem Saya saat ini hanya menggunakan 500MB RAM
+                    saat idle.
+                </p>
+            </div>
+            <button class="collapsible">Bahasa Pemrograman?</button>
+            <div class="content">
+                <p>
+                    Terdapat beberapa bahasa pemrograman yang sering Saya
+                    gunakan, diantaranya adalah Rust, Typescript, Javascript,
+                    Python, Shell, dan Go.
+                </p>
+            </div>
+        </div>
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            for (var i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>
